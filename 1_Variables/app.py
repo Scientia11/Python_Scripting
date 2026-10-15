@@ -1,21 +1,21 @@
 
 # Variables are containers use to store items. 
 # When we declare a variable, the compiler allocate a memory space, 
-# store the item and set the varaible name to reference its address 
+# store the item and set the variable name to reference its addres.
+# Variable names should be meaningful, clear and consistent
 
 
 
-
-studentCount = 1000
+# studentCount = 1000
 # print("Total students :", studentCount)
 
-rating = 8.99
+# rating = 8.99
 # print("Rating: ", rating)
 
-isPublished = False
+# isPublished = False
 # print("Published: ", isPublished)
 
-courseName = "Python Programming"
+# courseName = "Python Programming"
 # print("Course: ", courseName)
 
 
