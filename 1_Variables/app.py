@@ -5,18 +5,24 @@
 # Variable names should be meaningful, clear and consistent
 
 
+# Integer
+studentCount = 1000
+print("Total students :", studentCount)
 
-# studentCount = 1000
-# print("Total students :", studentCount)
+# Float
+rating = 8.99
+print("Rating: ", rating)
 
-# rating = 8.99
-# print("Rating: ", rating)
+# Boolean
+isPublished = False
+print("Published: ", isPublished)
 
-# isPublished = False
-# print("Published: ", isPublished)
+# String
+courseName = "Python Programming"
+print("Course: ", courseName)
 
-# courseName = "Python Programming"
-# print("Course: ", courseName)
+# Character
+grade = "A"
 
 
 
@@ -37,18 +43,18 @@
 
 
 
+# ANSWER
+analystName = "Godsway Addo"
+print("Analyst Name: ", analystName)
 
-# analystName = "Godsway Addo"
-# print("Analyst Name: ", analystName)
+analystRole = "SOC Analyst"
+print("Role: ", analystRole)
 
-# analystRole = "SOC Analyst"
-# print("Role: ", analystRole)
+dailyHours = 4
+print("Daily Study Hours: ", dailyHours)
 
-# dailyHours = 4
-# print("Daily Study Hours: ", dailyHours)
-
-# isLearningPython = True
-# print("Learning Python: ", isLearningPython)
+isLearningPython = True
+print("Learning Python: ", isLearningPython)
 
 
 
@@ -63,12 +69,18 @@
 # 4. Print its new value.
 
 
+# ANSWER
+# # 1. Create a variable called failed_logins and initialize it to 5.
+failedLogins = 5
 
-# failedLogins = 5
-# print("Failed Login Attemps: ", failedLogins)
+# 2. Print its value.
+print("Failed Login Attemps: ", failedLogins)
 
-# failedLogins = 8
-# print("Failed Login Attemps: ", failedLogins)
+# 3. Update the same variable to 8.
+failedLogins = 8
+
+# 4. Print its new value.
+print("Failed Login Attemps: ", failedLogins)
 
 # Challeng Question: The new value 8 overrides the previous value for failed Logins
 
@@ -94,38 +106,38 @@
 
 
 
+# ANSWER
+print("==== SECURITY ALERT ====")
 
-# print("==== SECURITY ALERT ====")
+sourceIP = "192.168.1.105"
+print("Source IP: ", sourceIP)
 
-# sourceIP = "192.168.1.105"
-# print("Source IP: ", sourceIP)
+destinationIP = "10.0.0.25"
+print("Destination IP: ", destinationIP)
 
-# destinationIP = "10.0.0.25"
-# print("Destination IP: ", destinationIP)
+alertSeverity = "High"
+print('Severity: ', alertSeverity)
 
-# alertSeverity = "High"
-# print('Severity: ', alertSeverity)
+alertStatus = "Under Investigation"
+print("Status: ", alertStatus)
 
-# alertStatus = "Under Investigation"
-# print("Status: ", alertStatus)
-
-# print("========================")
+print("========================")
 
 
 
 
 #Exercise 4(PREDICT THE OUTPUT)
 # Before running the following code, determine what you think it will print:
-# username = "admin"
-# username = "analyst"
-# print(username)
+username = "admin"
+username = "analyst"
+print(username)
 
-# attempts = 3
-# attempts = 7
-# print(attempts)
+attempts = 3
+attempts = 7
+print(attempts)
 
-# ip_address = "192.168.1.10"
-# print(ip_address)
+ip_address = "192.168.1.10"
+print(ip_address)
 
 
 # Write down the exact output you expect, including the order of the lines. Then run the code to verify your prediction.
@@ -133,7 +145,7 @@
 
 
 
-
+# ANSWER
 # Code Output Prediction
 # analyst
 # 7
@@ -168,20 +180,23 @@
 
 
 
+# ANSWER
+# 1. Stores all five pieces of information in appropriately named variables.
+userName = "administrator"
+sourceIP = "203.0.113.45"
+failedLoginAttempts = 12
+accountIsLocked = True
+investigationStatus = "Open"
 
-# userName = "administrator"
-# sourceIP = "203.0.113.45"
-# failedLoginAttempts = 12
-# accountIsLocked = True
-# investigationStatus = "Open"
-
-# print("==== SECURITY ALERT ====")
-# print("User Name: ", userName)
-# print("Source IP: ", sourceIP)
-# print("Acount Locked: ", accountIsLocked)
-# print("Status: ", investigationStatus)
-# print("Failed Login Attempts: ", failedLoginAttempts)
-# print("========================")
+# 2. Prints a neatly formatted investigation report.
+print("==== SECURITY ALERT ====")
+print("User Name: ", userName)
+print("Source IP: ", sourceIP)
+print("Acount Locked: ", accountIsLocked)
+print("Status: ", investigationStatus)
+# 3. Prints the number of failed login attempts separately at the end.
+print("Failed Login Attempts: ", failedLoginAttempts)
+print("========================")
 
 
 # Bonus Question: as an integer it help automationnscrpts easily determine the number of failed attempts. but a string is not a number.
