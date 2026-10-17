@@ -447,6 +447,19 @@ print(sourceIP[4:4])
 # 2. Explain what the empty slice returns and why.
 # 3. Run the code and compare the actual output with your predictions.
 
+# ANSWER
+# output prediction
+# 192
+# 168
+# 10
+# 25
+# 192.168 #python slice from 0 by defalult when the start is not specified
+# 10.25  #python slice  to the end by default when the end is not specified
+# ""
+
+
+
+
 
 
 
@@ -464,7 +477,36 @@ suspiciousURL = "https://malicious.example/login"
 # 3. Extracts the path /login.
 # 4. Stores each extracted value in a meaningful camelCase variable.
 # 5. Prints the results using a multiline f-string report.
-# 6. Prints the length of the extracted domain using len().
+# 6. Prints the length of the extracted domain.
 
 # Bonus question: Why might fixed-index slicing be unreliable when extracting domains and paths from URLs with different formats?
 
+
+# ANSWER
+# 1. Extracts the protocol https.
+urlProtocol = suspiciousURL[0:5]
+
+# 2. Extracts the domain malicious.example.
+urlDomainName = suspiciousURL[8:25]
+
+# 3. Extracts the path /login.
+urlPath = suspiciousURL[25:]
+
+# 5. Prints the results using a multiline f-string report.
+urlReport = f"""
+===== URL Report =====
+Protocol: {urlProtocol}
+Domain Name: {urlDomainName}
+URL Path: {urlPath}
+======================
+"""
+
+print(urlReport)
+
+
+# 6. Prints the length of the extracted domain.
+lengthOfDomain = len(urlDomainName)
+print("Domain Length: ", lengthOfDomain)
+
+
+# Bonus question: Because URLs with different formats have different lengths
