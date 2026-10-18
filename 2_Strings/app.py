@@ -2,6 +2,9 @@
 # But it is advisable to be consistent with one
 
  #single qoutes
+import string
+
+
 course = "Python"
 print(course)
 
@@ -294,7 +297,7 @@ print(userNameLength)
 
 # 4. Prints the first and last characters of the username.
 print(userName[0])
-print(userName[1])
+print(userName[-1])
 
 # 5. Prints the length of the alert type.
 alertTypeLength = len(alertType)
@@ -529,8 +532,13 @@ print("Domain Length: ", lengthOfDomain)
 
 
 
-# EXERCISE 11
+# EXERCISE 11(Quotation marks)
+# Create two variables:
+# - alertMessage should contain the sentence: The system displayed "Access Denied".
+# - analystMessage should contain: The analyst's account is locked.
+# Use \" and \' respectively to insert the quotation marks or apostrophe. Print both variables.
 
+# ANSWER
 alertMessage = "The system displayed \"Access Denied\"."
 print(alertMessage)
 
@@ -538,15 +546,71 @@ analystMessage = "The analyst\'s account is locked."
 print(analystMessage)
 
 
-# EXERCISE 12
+
+# EXERCISE 12(Windows file paths)
+# Create a variable named filePath containing this exact path:
+# C:\Users\Admin\Downloads\malware.exe
+# Use \\ wherever the path requires a literal backslash. Print the path and check that the output looks exactly as shown.
+
+# ANSWER
 filePath = "C:\\Users\\Admin\\Downloads\\malware.exe"
 print(filePath)
 
 
-# EXERCISE 13
+
+# EXERCISE 13(Multiline security report)
+# Create these variables:
+# userName = "adminRoot"
+# sourceIP = "192.168.10.25"
+# severity = "Critical"
+
+
+# Use \n to print this report on separate lines:
+# ==== SECURITY ALERT ====
+# Username: adminRoot
+# Source IP: 192.168.10.25
+# Severity: Critical
+# Action: Investigate immediately
+
+# Requirement: Build the report using an f-string and \n. Do not use triple-quoted strings for this exercise.
+
+
+# ANSWER
 userName = "adminRoot"
 sourceIP = "192.168.10.25"
 severity = "Critical"
 
 report = f"===== SECURITY ALERT =====\nUsername: {userName}\nSource IP: {sourceIP}\nSeverity: {severity}\nAction: Investigate Immediately"
 print(report)
+
+
+
+# Exercise 14 — Predict the output
+# Without running the code first, write down exactly what you expect Python to display.
+message = "Warning:\n\"Suspicious login detected\"\nAnalyst\'s review required."
+print(message)
+
+# Explain what \n, \", and \' each do in this example. Then run the code to verify your prediction.
+
+
+
+
+
+
+
+# Exercise 15 — Mini SOC automation challenge
+# You are writing a small security notification for a SOC analyst.
+# Create variables named analystName, filePath, and alertMessage with these values:
+# - Analyst name: Godsway
+# - File path: C:\Users\Admin\Desktop\suspicious.exe
+# - Alert message: The file was flagged as "Malicious".
+
+# Print a report with this structure:
+# ==== SOC NOTIFICATION ====
+# Analyst: Godsway
+# File: C:\Users\Admin\Desktop\suspicious.exe
+# Alert: The file was flagged as "Malicious".
+# Next Step: Review the file's activity.
+
+# Requirements: use \\ to represent the file path, escape the double quotes with \", and use \n to format the report on separate lines. Use an f-string to insert the variables.
+# Bonus: Add another line displaying the length of alertMessage using len().
