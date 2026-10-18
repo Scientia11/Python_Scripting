@@ -71,6 +71,22 @@ print(firstName[:])
 
 
 
+# ESCAPE SEQUENCE
+# \' = single qoute
+# \" = double qoutes
+# \\ = backslash
+# \n = new line
+
+townName = "\'Tapa \"Abotoase"
+print(townName)
+
+fullName = "\\Godsway \nAddo"
+print(fullName)
+
+
+
+
+
 
 # Exercise 1(Clean up the code)
 # A junior SOC Analyst wrote the following code:
@@ -510,3 +526,27 @@ print("Domain Length: ", lengthOfDomain)
 
 
 # Bonus question: Because URLs with different formats have different lengths
+
+
+
+# EXERCISE 11
+
+alertMessage = "The system displayed \"Access Denied\"."
+print(alertMessage)
+
+analystMessage = "The analyst\'s account is locked."
+print(analystMessage)
+
+
+# EXERCISE 12
+filePath = "C:\\Users\\Admin\\Downloads\\malware.exe"
+print(filePath)
+
+
+# EXERCISE 13
+userName = "adminRoot"
+sourceIP = "192.168.10.25"
+severity = "Critical"
+
+report = f"===== SECURITY ALERT =====\nUsername: {userName}\nSource IP: {sourceIP}\nSeverity: {severity}\nAction: Investigate Immediately"
+print(report)
