@@ -650,3 +650,195 @@ print(securityAlertReport)
 lengthOfAlertMessage = len(alertMessage)
 print(lengthOfAlertMessage)
 
+
+
+
+
+# Exercise 16 — Basic f-string formatting
+# You are creating a simple SOC analyst profile.
+
+# Create these variables:
+analystName = "Godsway"
+analystRole = "SOC Analyst"
+yearsOfExperience = 0
+
+# Your tasks:
+# 1. Print a sentence using all three variables and an f-string.
+# 2. Make the output read naturally, for example: My name is Godsway, I am a SOC Analyst, and I have 0 years of experience.
+# 3. Change analystRole to "Cybersecurity Analyst" and print the sentence again.
+
+# ANSWER
+#Change analystRole to "Cybersecurity Analyst" and print the sentence again.
+analystRole = "Cybersecurity Analyst"
+
+# 1. Print a sentence using all three variables and an f-string.
+sentence = f"My name is {analystName}, I am a {analystRole}, and I have {yearsOfExperience} years of experience."
+print(sentence)
+
+
+
+
+# Exercise 17 — Formatting a security alert
+# A monitoring system has generated an alert with the following information:
+userName = "svc_backup"
+sourceIP = "172.16.5.24"
+severity = "Critical"
+failedLogins = 8
+
+# Your tasks:
+# 1. Create an f-string named alertReport.
+# 2. Include all four variables in the report.
+# 3. Use \n to display each field on a separate line.
+# 4. Print the report.
+
+# Your output should follow this structure:
+# ===== SECURITY ALERT =====
+# Username: svc_backup
+# Source IP: 172.16.5.24
+# Severity: Critical
+# Failed Logins: 8
+# ==========================
+
+
+
+# ANSWER
+alertReport = f"===== SECURITY ALERT =====\nUsername: {userName}\nsourceIP: {sourceIP}\nSeverity: {severity}\nFailed Logins: {failedLogins}\n=========================="
+print(alertReport)
+
+
+
+
+
+# Exercise 18 — F-strings with calculations
+# A SOC analyst is reviewing failed login attempts.
+# You receive these values:
+userName = "adminRoot"
+firstAttemptCount = 5
+secondAttemptCount = 7
+
+# Your tasks:
+# 1. Calculate the total attempts and store the result in totalAttempts.
+# 2. Use an f-string to print the username and total number of attempts.
+# 3. Include the calculation firstAttemptCount + secondAttemptCount directly inside another f-string.
+# 4. Print both results and compare them.
+
+# Expected message format:
+# User adminRoot generated 12 failed login attempts.
+# Total calculated directly: 12
+
+
+# ANSWER
+# 1. Calculate the total attempts and store the result in totalAttempts.
+totalAttempts = firstAttemptCount + secondAttemptCount
+
+# 2. Use an f-string to print the username and total number of attempts.
+print(f"User {userName} generated {totalAttempts} failed login attempts.")
+
+# 3. Include the calculation firstAttemptCount + secondAttemptCount directly inside another f-string.
+print(f"Total calculated directly: {firstAttemptCount} + {secondAttemptCount} = {totalAttempts}")
+
+
+
+
+# Exercise 19 — F-strings with string lengths and slicing
+# A security log contains the following information:
+alertID = "SOC-20261019-CRIT-042"
+userName = "socAnalyst2026"
+
+# Your tasks:
+# 1. Extract the severity code from alertID using slicing and store it in severityCode.
+# 2. Extract the final four characters of userName and store them in userYear.
+# 3. calculate the length of userName.
+# 4. Print a report using an f-string containing the alert ID, severity code, username, extracted year, and username length.
+
+# Use this format:
+# ===== ALERT ANALYSIS =====
+# Alert ID: SOC-20261019-CRIT-042
+# Severity Code: CRIT
+# Username: socAnalyst2026
+# Username Year: 2026
+# Username Length: 14
+# ==========================
+
+
+# ANSWER
+# 1. Extract the severity code from alertID using slicing and store it in severityCode.
+severityCode = alertID[-3:]
+
+# 2. Extract the final four characters of userName and store them in userYear.
+userYear = userName[-4:]
+
+# 3. calculate the length of userName.
+lengthOfUsername = len(userName)
+
+# 4. Print a report using an f-string
+report = f"""
+===== ALERT ANALYSIS =====
+Alert ID: {alertID}
+Severity Code: {severityCode}
+Username: {userName}
+Username Year: {userYear}
+Username Length: {lengthOfUsername}
+==========================
+"""
+
+print(report)
+
+
+
+
+
+# Exercise 20 — Mini SOC reporting challenge
+# You are building a small Python script that generates a report for a suspicious file.
+
+# Given:
+fileName = "invoice_malware.exe"
+filePath = "C:\\Users\\Admin\\Downloads\\invoice_malware.exe"
+severity = "High"
+analystName = "Godsway"
+
+# Your tasks:
+# 1. Extract malware from fileName using slicing.
+# 2. Extract the file extension, including the period.
+# 3. Calculate the length of fileName.
+# 4. Use an f-string to generate a multiline report containing all four original variables, the extracted suspicious word, the extension, and the filename length.
+# 5. Include this final line in your report: Action: Investigate the file immediately.
+
+# Your report should follow this structure:
+# ===== SUSPICIOUS FILE REPORT =====
+# Analyst: Godsway
+# Filename: invoice_malware.exe
+# File Path: C:\Users\Admin\Downloads\invoice_malware.exe
+# Severity: High
+# Suspicious Word: malware
+# Extension: .exe
+# Filename Length: [calculated value]
+# Action: Investigate the file immediately.
+# ==================================
+
+
+# ANSWER
+# 1. Extract malware from fileName using slicing.
+suspiciousWord = fileName[8:15]
+
+# 2. Extract the file extension, including the period.
+fileExtension = fileName[15:]
+
+# 3. Calculate the length of fileName.
+fileNameLength = len(fileName)
+
+# 4. Use an f-string to generate a multiline report
+report = f"""
+===== SUSPICIOUS FILE REPORT =====
+Analyst: {analystName}
+Filename: {fileName}
+File Path: {filePath}
+Severity: {severity}
+Suspicious Word: {suspiciousWord}
+Extension: {fileExtension}
+Filename Length: {fileNameLength}
+Action: Investigate the file immediately.
+==================================
+"""
+
+print(report)
