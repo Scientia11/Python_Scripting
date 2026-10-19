@@ -54,7 +54,7 @@ print(studyProgram[-1])
 
 
 
-# Slicing A String
+# SLICING A STRING
 firstName = "Godsway"
 
 print("First name lemgth: ", len(firstName))
@@ -89,6 +89,13 @@ print(fullName)
 
 
 
+
+# FORMATTED STRINGS(f-strings)
+firstName = "Godsway"
+lastName = "Addo"
+
+fullName = f"{firstName} {lastName}"
+print(fullName)
 
 
 # Exercise 1(Clean up the code)
@@ -593,6 +600,14 @@ print(message)
 # Explain what \n, \", and \' each do in this example. Then run the code to verify your prediction.
 
 
+# ANSWER
+# Warning:
+# "Suspicious login detected"
+# Analyst's review required.
+
+# \n = new line
+# \" = double quotes
+# \' = single quotes
 
 
 
@@ -613,4 +628,25 @@ print(message)
 # Next Step: Review the file's activity.
 
 # Requirements: use \\ to represent the file path, escape the double quotes with \", and use \n to format the report on separate lines. Use an f-string to insert the variables.
-# Bonus: Add another line displaying the length of alertMessage using len().
+# Bonus: Add another line displaying the length of alertMessage.
+
+
+# ANSWER
+analystName = "Godsway"
+filePath = "C:\\Users\\Admin\\Desktop\\suspicious.exe"
+alertMessage = "The file was flagged as \"Malicious\"."
+
+securityAlertReport = f"""
+==== SOC NOTIFICATION ====
+Analyst: {analystName}
+File: {filePath}
+Alert: {alertMessage}
+Next Step: Review the file\'s activity.
+"""
+
+print(securityAlertReport)
+
+# Bonus: Add another line displaying the length of alertMessage.
+lengthOfAlertMessage = len(alertMessage)
+print(lengthOfAlertMessage)
+
