@@ -98,6 +98,46 @@ fullName = f"{firstName} {lastName}"
 print(fullName)
 
 
+
+# STRING METHODS
+# everything in python is an object.
+# Methods are functions in an object which can be accessed using the dot notation.
+courseName = "  information techNology  "
+
+# convert to uppercase
+print(courseName.upper())
+
+# convert to lowercase
+print(courseName.lower())
+
+# capitalize words in a string
+print(courseName.title())
+
+# remove whitespaces in the beginning and ending of a string
+print(courseName.strip())
+
+# search for a character or sequence of characters in a string
+# note: python is case sensitive
+print(courseName.find("tech")) #returns the index
+
+# replace a character or sequence of characters in a string
+print(courseName.replace("No", "no"))
+
+# check for the existence of a character or sequence of characters in a string
+print("tech" in courseName) #returns a boolean
+
+# check if a character or sequence of characters is not in a string
+print("talk" not in courseName) #returns a boolean
+
+
+# The string methods creates a new string, they donot modify the original string
+print("Original: ", courseName)
+
+
+
+
+
+
 # Exercise 1(Clean up the code)
 # A junior SOC Analyst wrote the following code:
 a = "administrator"
@@ -842,3 +882,102 @@ Action: Investigate the file immediately.
 """
 
 print(report)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Exercise 21 — Normalize usernames
+# A system receives usernames with inconsistent capitalization.
+userName = "  gODsWaY ADDO  "
+
+# Your tasks:
+# 1. Convert the username to lowercase and print it.
+# 2. Convert it to uppercase and print it.
+# 3. Convert it to title case and print it.
+# 4. Store each result in a separate, meaningfully named variable.
+# 5. Print all three results using f-strings.
+# Challenge question: Do these string methods change the original userName variable automatically, or do they return new strings?
+
+
+
+
+# Exercise 22 — Clean suspicious log data
+# A log entry contains unwanted spaces and inconsistent separators.
+logEntry = "   ALERT: Failed-Login-From-192.168.1.10   "
+
+# Your tasks:
+# 1. Remove the leading and trailing whitespace using .strip().
+# 2. Replace every hyphen (-) with a space.
+# 3. Store each result in a separate variable.
+# 4. Print the original and cleaned log entries using f-strings.
+# Expected cleaned result:
+# ALERT: Failed Login From 192.168.1.10
+
+# Challenge question: What would happen if you used .strip("-") on a string that contains hyphens in the middle rather than at its edges?
+
+
+
+
+# Exercise 23 — Search for suspicious indicators
+# You are investigating a security log:
+logMessage = "Failed login detected from 10.0.0.25"
+
+# Your tasks:
+# 1. Use .find() to locate the word "login" and print its index.
+# 2. Use .find() to locate the IP address "10.0.0.25" and print its index.
+# 3. Check whether "Failed" is in logMessage.
+# 4. Check whether "malware" is in logMessage.
+# 5. Use not in to check whether "Success" is absent from the message.
+# Challenge question: What does .find() return when the text you're searching for does not exist in the string?
+
+
+
+# Exercise 24 — Investigate a phishing alert
+# A security monitoring system receives this message:
+alertMessage = "   WARNING: SUSPICIOUS LOGIN FROM UNKNOWN DEVICE   "
+
+# Your tasks:
+# 1. Remove the extra spaces.
+# 2. Convert the cleaned message to lowercase.
+# 3. Replace "warning" with "critical".
+# 4. Check whether "suspicious login" appears in the final message.
+# 5. Check whether "malware" appears in the final message.
+# 6. Print the original message, the final message, and both membership results using f-strings.
+# Important: Perform the operations in a sensible order by assigning each intermediate result to a variable.
+
+# Challenge question: Why is converting a message to lowercase useful before searching it for a keyword?
+
+
+
+
+# Exercise 25 — Mini SOC investigation report
+# You receive this suspicious alert:
+alertMessage = "   ALERT: USER ADMIN_ROOT FAILED-LOGIN FROM 192.168.10.25   "
+
+# Write a Python script that:
+# 1. Removes leading and trailing whitespace.
+# 2. Converts the cleaned message to lowercase.
+# 3. Replaces "failed-login" with "failed login".
+# 4. Uses .find() to locate "admin_root" in the final message.
+# 5. Checks whether "192.168.10.25" is present.
+# 6. Checks whether "malware" is absent.
+# 7. Generates a readable multiline investigation report using an f-string.
+# Use this output structure:
+# ===== SOC INVESTIGATION =====
+# Original Alert: [original message]
+# Cleaned Alert: [cleaned message]
+# Username Index: [calculated index]
+# Source IP Found: [True or False]
+# Malware Mentioned: [True or False]
+# =============================
+
+# Bonus: Explain why .find() returning -1 is different from returning 0.
