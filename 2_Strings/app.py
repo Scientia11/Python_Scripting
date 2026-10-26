@@ -887,14 +887,6 @@ print(report)
 
 
 
-
-
-
-
-
-
-
-
 # Exercise 21 — Normalize usernames
 # A system receives usernames with inconsistent capitalization.
 userName = "  gODsWaY ADDO  "
@@ -908,6 +900,34 @@ userName = "  gODsWaY ADDO  "
 # Challenge question: Do these string methods change the original userName variable automatically, or do they return new strings?
 
 
+# ANSWER
+# 1. Convert the username to lowercase and print it.
+userNameToLowerCase = userName.strip().lower()
+print(userNameToLowerCase)
+
+# 2. Convert it to uppercase and print it.
+userNameToUpperCase = userName.strip().upper()
+print(userNameToUpperCase)
+
+# 3. Convert it to title case and print it.
+userNameToTitleCase = userName.strip().title()
+print(userNameToTitleCase)
+
+# 5. Print all three results using f-strings.
+userNameNormalizationResult = f"""
+==== USERNAME NORMALIZATION ====
+Lower Case: {userNameToLowerCase}
+Upper Case: {userNameToUpperCase}
+Tile Case: {userNameToTitleCase}
+================================
+"""
+print(userNameNormalizationResult)
+
+# Challenge question: Do these string methods change the original userName variable automatically, or do they return new strings?
+# They return new strings
+
+
+
 
 
 # Exercise 22 — Clean suspicious log data
@@ -915,7 +935,7 @@ userName = "  gODsWaY ADDO  "
 logEntry = "   ALERT: Failed-Login-From-192.168.1.10   "
 
 # Your tasks:
-# 1. Remove the leading and trailing whitespace using .strip().
+# 1. Remove the leading and trailing whitespace
 # 2. Replace every hyphen (-) with a space.
 # 3. Store each result in a separate variable.
 # 4. Print the original and cleaned log entries using f-strings.
@@ -923,6 +943,26 @@ logEntry = "   ALERT: Failed-Login-From-192.168.1.10   "
 # ALERT: Failed Login From 192.168.1.10
 
 # Challenge question: What would happen if you used .strip("-") on a string that contains hyphens in the middle rather than at its edges?
+
+
+# ANSWER
+# 1. Remove the leading and trailing whitespace
+removeWhiteSpace = logEntry.strip()
+
+# 2. Replace every hyphen (-) with a space.
+logEntryEdit = logEntry.strip().replace("-", " ")
+
+# 4. Print the original and cleaned log entries using f-strings.
+logEntryCleanUpResult = f"""
+Original Log Entry: {logEntry}
+Cleaned Result: {logEntryEdit}
+"""
+print(logEntryCleanUpResult)
+
+# Challenge question: What would happen if you used .strip("-") on a string that contains hyphens in the middle rather than at its edges?
+print(logEntry.strip("-"))
+# Nothing happens
+
 
 
 
