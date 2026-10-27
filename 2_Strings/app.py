@@ -972,12 +972,44 @@ print(logEntry.strip("-"))
 logMessage = "Failed login detected from 10.0.0.25"
 
 # Your tasks:
-# 1. Use .find() to locate the word "login" and print its index.
-# 2. Use .find() to locate the IP address "10.0.0.25" and print its index.
+# 1. Use a string method to locate the word "login" and print its index.
+# 2. Use a string method to locate the IP address "10.0.0.25" and print its index.
 # 3. Check whether "Failed" is in logMessage.
 # 4. Check whether "malware" is in logMessage.
 # 5. Use not in to check whether "Success" is absent from the message.
 # Challenge question: What does .find() return when the text you're searching for does not exist in the string?
+
+# ANSWER
+# 1. Use a string method to locate the word "login" and print its index.
+loginIndex = logMessage.find("login")
+print("'login' index: ", loginIndex)
+
+# 2. Use a string method to locate the IP address "10.0.0.25" and print its index.
+IPIndex = logMessage.find("10.0.0.25")
+print("'IP' Index: ", IPIndex)
+
+# 3. Check whether "Failed" is in logMessage.
+failedIsInLogMessage = "Failed" in logMessage
+print("'Failed' in log message: ", failedIsInLogMessage)
+
+# 4. Check whether "malware" is in logMessage.
+malwareIsInLogMessage = "malware" in logMessage
+print("'malware' in log message: ", malwareIsInLogMessage)
+
+# 5. check whether "Success" is absent from the message.
+isSuccesAbsent = "Success" not in logMessage
+print("'Success' is absent: ", isSuccesAbsent)
+
+# Challenge question: What does .find() return when the text you're searching for does not exist in the string?
+print(logMessage.find("joe"))
+# .find() returns -1 when the text doesnt exist in the string
+
+
+
+
+
+
+
 
 
 
