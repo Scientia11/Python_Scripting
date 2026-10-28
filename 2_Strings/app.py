@@ -1007,12 +1007,6 @@ print(logMessage.find("joe"))
 
 
 
-
-
-
-
-
-
 # Exercise 24 — Investigate a phishing alert
 # A security monitoring system receives this message:
 alertMessage = "   WARNING: SUSPICIOUS LOGIN FROM UNKNOWN DEVICE   "
@@ -1029,6 +1023,37 @@ alertMessage = "   WARNING: SUSPICIOUS LOGIN FROM UNKNOWN DEVICE   "
 # Challenge question: Why is converting a message to lowercase useful before searching it for a keyword?
 
 
+# ANSWER
+# 1. Remove the extra spaces.
+removeWhiteSpace = alertMessage.strip()
+
+# 2. Convert the cleaned message to lowercase.
+messageToLowerCase = removeWhiteSpace.lower()
+
+# 3. Replace "warning" with "critical".
+messageEdit = messageToLowerCase.replace("warning", "critical")
+
+# 4. Check whether "suspicious login" appears in the final message.
+suspiciousLoginPresent = "suspicious login" in messageEdit
+
+# 5. Check whether "malware" appears in the final message.
+malwarePresent = "malware" in messageEdit
+
+# 6. Print the original message, the final message, and both membership results using f-strings.
+messageResult = f"""
+==== EDITED ALERT RESULT ====
+Original message: {alertMessage}
+Final message: {messageEdit}
+Suspicious Login Present: {suspiciousLoginPresent}
+Malware Present: {malwarePresent}
+=============================
+"""
+print(messageResult)
+
+# Challenge question: Why is converting a message to lowercase useful before searching it for a keyword?
+# This help prevent wrong searches due to capitalization since python is case sensitive
+
+
 
 
 # Exercise 25 — Mini SOC investigation report
@@ -1039,7 +1064,7 @@ alertMessage = "   ALERT: USER ADMIN_ROOT FAILED-LOGIN FROM 192.168.10.25   "
 # 1. Removes leading and trailing whitespace.
 # 2. Converts the cleaned message to lowercase.
 # 3. Replaces "failed-login" with "failed login".
-# 4. Uses .find() to locate "admin_root" in the final message.
+# 4. locate "admin_root" in the final message.
 # 5. Checks whether "192.168.10.25" is present.
 # 6. Checks whether "malware" is absent.
 # 7. Generates a readable multiline investigation report using an f-string.
@@ -1053,3 +1078,39 @@ alertMessage = "   ALERT: USER ADMIN_ROOT FAILED-LOGIN FROM 192.168.10.25   "
 # =============================
 
 # Bonus: Explain why .find() returning -1 is different from returning 0.
+
+
+# ANSWER
+# 1. Removes leading and trailing whitespace.
+removeWhiteSpace = alertMessage.strip()
+
+# 2. Converts the cleaned message to lowercase.
+messageToLowerCase = removeWhiteSpace.lower()
+
+# 3. Replaces "failed-login" with "failed login".
+editAlertMeesage = messageToLowerCase.replace("failed-login", "failed login")
+
+# 4. locate "admin_root" in the final message.
+admin_rootLocation = editAlertMeesage.find("admin_root")
+
+# 5. Checks whether "192.168.10.25" is present.
+thisIPIsPresent = "192.168.10.25" in editAlertMeesage
+
+# 6. Checks whether "malware" is absent.
+malwareIsAbsent = "malware" not in editAlertMeesage
+
+# 7. Generates a readable multiline investigation report using an f-string.
+investigationReport = f"""
+===== SOC INVESTIGATION =====
+Original Alert: {alertMessage}
+Cleaned Alert: {editAlertMeesage}
+Username Index: {admin_rootLocation}
+Source IP Found: {thisIPIsPresent}
+Malware Mentioned: {malwareIsAbsent}
+=============================
+"""
+print(investigationReport)
+
+# Bonus: Explain why .find() returning -1 is different from returning 0.
+# -1 means the search item is not present
+# 0 means the search item is located as the first element
