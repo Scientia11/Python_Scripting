@@ -57,6 +57,40 @@ signalValue = 4 + 3j
 # Think about it: Why is `12` an integer while `12.0` is a float, even though they represent the same numerical quantity?
 
 
+# ANSWER
+# 1. Print each variable.
+print("Failed Logins = ", failedLogins)
+print("Response Time = ", responseTime)
+print("Signal Value = ", signalValue)
+
+# 2. Identify which variable contains an integer, a floating-point number, and a complex number.
+# failedLogins = 12 #integer
+# responseTime = 2.75 #floating point number
+# signalValue = 4 + 3j #complex number
+
+# 3. Use Python's `type()` function to display the type of each variable.
+print("")
+print("Failed Logins: ", type(failedLogins))
+print("Response Time: ", type(responseTime))
+print("Signal Value: ", type(signalValue))
+
+# 4. Create three additional variables of your own: one integer, one float, and one complex number. Print their values and types.
+score = 80
+height = 8.7
+formula = 6 + 3j
+
+print("score = ", score)
+print("height = ", height)
+print("formula = ", formula)
+
+print("")
+print("score: ", type(score))
+print("height: ", type(height))
+print("height: ", type(height))
+
+
+
+
 
 ## Exercise 2 — Calculate incident statistics
 # A monitoring system records the following information:
