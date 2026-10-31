@@ -38,10 +38,26 @@ print(math.isqrt(20))
 print(math.tan(10))
 
 
+# TYPE CONVERSION
+# int()
+# float()
+# str()
+# bool()
+
+# Input from the user always comes as a string in python
+textScore = input("Text score: ")
+
+print(type(textScore)) #string
+print(type(int(textScore)))  #int
+
+examScore = 55
+
+totalScore = int(textScore) + examScore
+print(totalScore)
 
 
 
-## Exercise 1 — Identify and work with number types
+# Exercise 1 — Identify and work with number types
 # A SOC analyst records these values:
 
 failedLogins = 12
@@ -92,7 +108,7 @@ print("height: ", type(height))
 
 
 
-## Exercise 2 — Calculate incident statistics
+# Exercise 2 — Calculate incident statistics
 # A monitoring system records the following information:
 failedAttempts = 18
 successfulAttempts = 6
