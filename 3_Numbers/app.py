@@ -56,6 +56,16 @@ totalScore = int(textScore) + examScore
 print(totalScore)
 
 
+# Bool(Falsy Values)
+# ""
+# 0
+# None
+
+print(bool(""))
+print(bool(0))
+print(bool(None))
+
+
 
 # Exercise 1 — Identify and work with number types
 # A SOC analyst records these values:
@@ -115,14 +125,44 @@ successfulAttempts = 6
 minutesMonitored = 4
 
 # Your tasks:
-# 1. Calculate the total number of attempts using `+`.
-# 2. Calculate the difference between failed and successful attempts using `-`.
-# 3. Calculate the total number of attempts per minute using `/`.
-# 4. Calculate the whole-number quotient when total attempts are divided by `minutesMonitored` using `//`.
-# 5. Calculate the remainder using `%`.
+# 1. Calculate the total number of attempts.
+# 2. Calculate the difference between failed and successful attempts.
+# 3. Calculate the total number of attempts per minute.
+# 4. Calculate the whole-number quotient when total attempts are divided by `minutesMonitored`.
+# 5. Calculate the remainder.
 # 6. Print each result with a meaningful message using f-strings.
 
-# Think about it: If 24 attempts occur over 5 minutes, what results would `/`, `//`, and `%` produce when you divide 24 by 5?
+
+# ANSWER
+# 1. Calculate the total number of attempts.
+totalAttempts = failedAttempts + successfulAttempts
+
+# 2. Calculate the difference between failed and successful attempts.
+differenceBetweenAttempts = failedAttempts - successfulAttempts
+
+# 3. Calculate the total number of attempts per minute.
+attemptsPerMinute = totalAttempts / minutesMonitored
+
+# 4. Calculate the whole-number quotient when total attempts are divided by `minutesMonitored`
+wholeNumberQuotient = totalAttempts // minutesMonitored
+
+# 5. Calculate the remainder.
+remainder = totalAttempts % minutesMonitored
+
+# 6. Print each result with a meaningful message using f-strings.
+incidentStatisticsReport = f"""
+==== INCIDENT STATISTICS REPOORT ====
+Total Attempts: {totalAttempts}
+Difference Between Attempts: {differenceBetweenAttempts}
+Total Attempts Per Minute: {attemptsPerMinute}
+Whole Number Qoutient Of Attempts: {wholeNumberQuotient}
+Remainder: {remainder}
+"""
+
+print(incidentStatisticsReport)
+
+
+
 
 
 
