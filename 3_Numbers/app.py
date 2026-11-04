@@ -163,9 +163,6 @@ print(incidentStatisticsReport)
 
 
 
-
-
-
 ## Exercise 3 — Understand exponentiation and operator precedence
 # A security tool assigns a simple score based on repeated events.
 
@@ -181,7 +178,34 @@ bonusScore = 5
 # 5. Print all four results using f-strings.
 # 6. Explain why the second and third calculations produce different results.
 
-# Important: Predict the results before running your code. Python's operator precedence determines which operation happens first, and exponentiation has a special evaluation order.
+# ANSWER
+# 1. Calculate `baseScore ** multiplier`.
+firstResult = baseScore ** multiplier
+
+# 2. Calculate `baseScore * multiplier + bonusScore`.
+secondResult = baseScore * multiplier + bonusScore
+
+# 3. Calculate `baseScore * (multiplier + bonusScore)`.
+thirdResult = baseScore * (multiplier + bonusScore)
+
+# 4. Calculate `2 ** 3 ** 2`.
+fourthResult = 2 ** 3 ** 2
+
+# 5. Print all four results using f-strings.
+calculationResults = f"""
+=== CALCULATION RESULTS ===
+1. {firstResult}
+2. {secondResult}
+3. {thirdResult}
+4. {fourthResult}
+"""
+print(calculationResults)
+
+# 6. Explain why the second and third calculations produce different results.
+# In the second calculation * took precedence over + and vise versa in the third calculation
+
+
+
 
 
 
