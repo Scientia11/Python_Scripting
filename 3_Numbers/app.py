@@ -323,27 +323,59 @@ print(incidentReport)
 
 
 
+# Exercise 6 — Rounding numerical values
+# A security monitoring system records the following response times:
+responseTime1 = 3.4567
+responseTime2 = 7.8912
+responseTime3 = 12.5555
+
+# Your tasks:
+# 1. Print each response time rounded to 2 decimal places using round().
+# 2. Round each response time to the nearest whole number.
+# 3. Store each rounded result in a separate variable.
+# 4. Print the original and rounded values using f-strings.
+
+# Reasoning questions:
+# - What does round(responseTime1, 2) mean?
+# - What happens if you use round(responseTime1) without specifying the number of decimal places?
+
+# ANSWER
+# 1. Print each response time rounded to 2 decimal places.
+print( round(responseTime1, 2))
+
+print(round(responseTime2, 2))
+
+print(round(responseTime3, 2))
+
+# 2. Round each response time to the nearest whole number.
+# 3. Store each rounded result in a separate variable.
+result1 = round(responseTime1)
+
+result2 = round(responseTime2)
+
+result3 = round(responseTime3)
+
+# 4. Print the original and rounded values using f-strings.
+roundingReport = f"""
+Original Response Time 1: {responseTime1}
+Rounded Value:{result1}
+
+Original Response Time 2 {responseTime2}
+Rounded Value:{result2}
+
+Original Response Time 3: {responseTime3}
+Rounded Value:{result3}
+"""
+
+print(roundingReport)
 
 
-# # Exercise 6 — Rounding numerical values
-# # A security monitoring system records the following response times:
-# responseTime1 = 3.4567
-# responseTime2 = 7.8912
-# responseTime3 = 12.5555
+# Reasoning questions:
+# - What does round(responseTime1, 2) mean?
+# ANSWER: It round responseTime1 to 2 decimal places
 
-# # Your tasks:
-# # 1. Print each response time rounded to 2 decimal places using round().
-# # 2. Round each response time to the nearest whole number.
-# # 3. Store each rounded result in a separate variable.
-# # 4. Print the original and rounded values using f-strings.
-# # Reasoning questions:
-# # - What does round(responseTime1, 2) mean?
-# # - What happens if you use round(responseTime1) without specifying the number of decimal places?
-
-# # ANSWER
-# # 1. Print each response time rounded to 2 decimal places.
-# responseTime1RoundToTwoDecimal = round(responseTime1, 2)
-# print(responseTime1RoundToTwoDecimal)
+# - What happens if you use round(responseTime1) without specifying the number of decimal places
+# ANSWER: Python will by default set it to 0 and run it to the nearest whole number
 
 
 
