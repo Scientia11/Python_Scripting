@@ -380,47 +380,95 @@ print(roundingReport)
 
 
 
-# # Exercise 7 — Working with absolute values
-# # An analyst compares expected and actual server response times.
-# expectedTime = 5.5
-# actualTime = 8.2
+# Exercise 7 — Working with absolute values
+# An analyst compares expected and actual server response times.
+expectedTime = 5.5
+actualTime = 8.2
 
-# # Your tasks:
-# # 1. Calculate the difference between the two values.
-# # 2. Use abs() to obtain the absolute difference.
-# # 3. Print both the original difference and the absolute difference.
-# # 4. Repeat the exercise with expectedTime = 10 and actualTime = 6.
+# Your tasks:
+# 1. Calculate the difference between the two values.
+# 2. Use abs() to obtain the absolute difference.
+# 3. Print both the original difference and the absolute difference.
+# 4. Repeat the exercise with expectedTime = 10 and actualTime = 6.
 
-# # Reasoning questions:
-# # - What does abs() do?
-# # - Why might absolute differences be useful when comparing security metrics?
+# Reasoning questions:
+# - What does abs() do?
+# - Why might absolute differences be useful when comparing security metrics?
+
+# ANSWER
+# 1. Calculate the difference between the two values.
+difference1 = expectedTime - actualTime
+print(difference1)
+
+# 2. Use abs() to obtain the absolute difference.
+absoluteDiference1 = abs(difference1)
+print(absoluteDiference1)
+
+# 4. Repeat the exercise with expectedTime = 10 and actualTime = 6.
+expectedTime = 10
+actualTime = 6
+
+difference2 = expectedTime - actualTime
+print(difference2)
+
+absoluteDiference2 = abs(difference2)
+print(absoluteDiference2)
+
+
+# Reasoning questions:
+# - What does abs() do?
+# ANSWER: it returns a positive number from any number given to it
+
+# - Why might absolute differences be useful when comparing security metrics?
+# it will help ensure the real number difference between security metrics
 
 
 
-# # Exercise 8 — Using the math module
-# # Python's math module provides additional mathematical functions.
+# Exercise 8 — Using the math module
+# Python's math module provides additional mathematical functions.
 
-# # First, import the module:
-# # import math
+# First, import the module:
+# import math
 
-# # Given:
-# number1 = 4.3
-# number2 = 9.8
-# number3 = 25
-# number4 = 3
+# Given:
+number1 = 4.3
+number2 = 9.8
+number3 = 25
+number4 = 3
 
-# # Your tasks:
-# # 1. Use math.ceil() on number1.
-# # 2. Use math.floor() on number2.
-# # 3. Use math.isqrt() on number3.
-# # 4. Use math.exp() on number4.
-# # 5. Print all results using descriptive messages.
-# # 6. Use type() to check the data type of each result.
+# Your tasks:
+# 1. Use math.ceil() on number1.
+# 2. Use math.floor() on number2.
+# 3. Use math.isqrt() on number3.
+# 4. Use math.exp() on number4.
+# 5. Print all results using descriptive messages.
+# 6. Use type() to check the data type of each result.
 
-# # Reasoning questions:
-# # - What is the difference between math.ceil() and math.floor()?
-# # - What does math.isqrt(25) return?
-# # - What mathematical operation does math.exp(3) perform?
+# Reasoning questions:
+# - What is the difference between math.ceil() and math.floor()?
+# - What does math.isqrt(25) return?
+# - What mathematical operation does math.exp(3) perform?
+
+# ANSWER
+import math
+# 1. Use math.ceil() on number1.
+print("Ceil: ", math.ceil(number1))
+
+# 2. Use math.floor() on number2.
+print("Floor: ", math.floor(number2))
+
+# 3. Use math.isqrt() on number3.
+print("Square Root: ", math.isqrt(number3))
+
+# 4. Use math.exp() on number4.
+print("Euler's number exponent :", math.exp(number4))
+
+# 6. Use type() to check the data type of each result.
+print(type(math.ceil(number1)))
+print(type(math.floor(number2)))
+print(type(math.isqrt(number3)))
+print(type(math.exp(number4)))
+
 
 
 # # Exercise 9 — Type conversion
