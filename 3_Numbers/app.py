@@ -471,75 +471,177 @@ print(type(math.exp(number4)))
 
 
 
-# # Exercise 9 — Type conversion
-# # Consider these values:
-# loginAttempts = "15"
-# responseTime = "4.75"
-# accountBalance = 250
-# isCompromised = 1
+# Exercise 9 — Type conversion
+# Consider these values:
+loginAttempts = "15"
+responseTime = "4.75"
+accountBalance = 250
+isCompromised = 1
 
-# # Your tasks:
-# # 1. Convert loginAttempts into an integer using int().
-# # 2. Convert responseTime into a float using float().
-# # 3. Convert accountBalance into a string using str().
-# # 4. Convert isCompromised into a Boolean using bool().
-# # 5. Print each converted value.
-# # 6. Use type() to verify the data type of each converted variable.
+# Your tasks:
+# 1. Convert loginAttempts into an integer.
+# 2. Convert responseTime into a float.
+# 3. Convert accountBalance into a string.
+# 4. Convert isCompromised into a Boolean.
+# 5. Print each converted value.
+# 6. Use type() to verify the data type of each converted variable.
 
-# # Reasoning questions:
-# # - Why can't you directly perform arithmetic addition between "15" and 5?
-# # - What happens if you try int("hello")?
+# Reasoning questions:
+# - Why can't you directly perform arithmetic addition between "15" and 5?
+# - What happens if you try int("hello")?
 
+# ANSWER
+# 1. Convert loginAttempts into an integer.
+print(int(loginAttempts))
 
+print(type(int(loginAttempts)))
 
-# # Exercise 10 — Accepting user input
-# # Create a simple program that asks a SOC analyst for information.
+# 2. Convert responseTime into a float.
+print(float(responseTime))
 
-# # Your program should:
-# # 1. Ask for the analyst's name using input().
-# # 2. Ask for the number of failed login attempts.
-# # 3. Ask for the average response time.
-# # 4. Convert the number of failed login attempts into an integer.
-# # 5. Convert the average response time into a float.
-# # 6. Print all collected information using an f-string.
-# # 7. Use type() to display the data types of the converted values.
-# # Example interaction:
-# # Enter analyst name: Godsway
-# # Enter failed login attempts: 12
-# # Enter average response time: 4.75
+print(type(float(responseTime)))
 
-# # ===== ANALYST REPORT =====
-# # Analyst: Godsway
-# # Failed Logins: 12
-# # Average Response Time: 4.75
+# 3. Convert accountBalance into a string.
+print(str(accountBalance))
 
-# # Important: Remember that input() returns a string, even when the user enters a number.
+print(type(str(accountBalance)))
+
+# 4. Convert isCompromised into a Boolean.
+print(bool(isCompromised))
+
+print(type(bool(isCompromised)))
 
 
-# # Exercise 11 — Understanding Boolean values
-# # Python treats certain values as falsy and most other values as truthy.
 
-# # Create these variables:
-# value1 = ""
-# value2 = "SOC Analyst"
-# value3 = 0
-# value4 = 25
-# value5 = None
-# value6 = 3.14
-# value7 = False
-# value8 = True
 
-# # Your tasks:
-# # 1. Convert each value into a Boolean using bool().
-# # 2. Print each original value and its Boolean result.
-# # 3. Use type() to identify the original data type.
-# # 4. Identify all the falsy values.
-# # 5. Identify all the truthy values.
+# Exercise 10 — Accepting user input
+# Create a simple program that asks a SOC analyst for information.
 
-# # Reasoning questions:
-# # - Why is bool("0") different from bool(0)?
-# # - Is an empty string falsy?
-# # - Is a negative number truthy?
+# Your program should:
+# 1. Ask for the analyst's name using input().
+# 2. Ask for the number of failed login attempts.
+# 3. Ask for the average response time.
+# 4. Convert the number of failed login attempts into an integer.
+# 5. Convert the average response time into a float.
+# 6. Print all collected information using an f-string.
+# 7. Use type() to display the data types of the converted values.
+# Example interaction:
+# Enter analyst name: Godsway
+# Enter failed login attempts: 12
+# Enter average response time: 4.75
+
+# ===== ANALYST REPORT =====
+# Analyst: Godsway
+# Failed Logins: 12
+# Average Response Time: 4.75
+
+# Important: Remember that input() returns a string, even when the user enters a number.
+
+# ANSWER
+# 1. Ask for the analyst's name using input().
+analystName = input("Enter analyst name: ")
+
+# 2. Ask for the number of failed login attempts.
+failedLoginAttempts = input("Enter failed login attempts: ")
+
+# 3. Ask for the average response time.
+averageResponseTime = input("Enter average response time: ")
+
+# 4. Convert the number of failed login attempts into an integer.
+failedLoginAttempts = int(failedLoginAttempts)
+
+# 5. Convert the average response time into a float.
+averageResponseTime = float(averageResponseTime)
+
+# 6. Print all collected information using an f-string.
+print(f"""
+
+===== ANALYST REPORT =====
+Analyst: {analystName}
+Failed Logins: {failedLoginAttempts}
+Average Response Time: {averageResponseTime}
+
+""")
+
+
+# 7. Use type() to display the data types of the converted values.
+print(f"Username Type: {type(analystName)}")
+print(f"Failed Logins Type: {type(failedLoginAttempts)}")
+print(f"Average Response Time Type: {type(averageResponseTime)}")
+
+
+
+# Exercise 11 — Understanding Boolean values
+# Python treats certain values as falsy and most other values as truthy.
+
+# Create these variables:
+value1 = ""
+value2 = "SOC Analyst"
+value3 = 0
+value4 = 25
+value5 = None
+value6 = 3.14
+value7 = False
+value8 = True
+
+# Your tasks:
+# 1. Convert each value into a Boolean using bool().
+# 2. Print each original value and its Boolean result.
+# 3. Use type() to identify the original data type.
+# 4. Identify all the falsy values.
+# 5. Identify all the truthy values.
+
+# Reasoning questions:
+# - Why is bool("0") different from bool(0)?
+# - Is an empty string falsy?
+# - Is a negative number truthy?
+
+# ANSWER
+# 1. Convert each value into a Boolean using bool().
+value1ToBool = bool("")
+value2ToBool = bool("SOC Analyst")
+value3ToBool = bool(0)
+value4ToBool = bool(25)
+value5ToBool = bool(None)
+value6ToBool = bool(3.14)
+value7ToBool = bool(False)
+value8ToBool = bool(True)
+
+# 2. Print each original value and its Boolean result.
+print(f"Original: {value1}, Boolean: {value1ToBool}")
+print(f"Original: {value2}, Boolean: {value2ToBool}")
+print(f"Original: {value3}, Boolean: {value3ToBool}")
+print(f"Original: {value4}, Boolean: {value4ToBool}")
+print(f"Original: {value5}, Boolean: {value5ToBool}")
+print(f"Original: {value6}, Boolean: {value6ToBool}")
+print(f"Original: {value7}, Boolean: {value7ToBool}")
+print(f"Original: {value8}, Boolean: {value8ToBool}")
+
+print("")
+
+# 3. Use type() to identify the original data type.
+print(f"Value1 Type: {type(value1)}")
+print(f"Value2 Type: {type(value2)}")
+print(f"Value3 Type: {type(value3)}")
+print(f"Value4 Type: {type(value4)}")
+print(f"Value5 Type: {type(value5)}")
+print(f"Value6 Type: {type(value6)}")
+print(f"Value7 Type: {type(value7)}")
+
+# 4. Identify all the falsy values.
+# Values 1,3,5 and 7
+
+# 5. Identify all the truthy values.
+# Values 2,4,6 and 8
+
+# Reasoning questions:
+# - Why is bool("0") different from bool(0)?
+# Because "0" is a string with an object hence truthy but 0 is falsy.
+
+# - Is an empty string falsy? Yes
+
+# - Is a negative number truthy? Yes
+
 
 
 
