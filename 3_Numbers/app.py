@@ -10,7 +10,7 @@ eqn = 2 + 19j # a + bi where a and b are numbers and i is an imaginary number
 
 
 # ARITHMETIC OPERATORS IN PYTHON
-print(10 + 3) #addtion
+print(10 + 3) #addition
 print(10 - 3) #subtraction
 print(10 * 3) #multiplication
 print(10 / 3) #division
@@ -645,86 +645,174 @@ print(f"Value7 Type: {type(value7)}")
 
 
 
-# # Exercise 12 — User input and Boolean conversion
-# # Imagine you're building a basic security monitoring configuration tool.
+# Exercise 12 — User input and Boolean conversion
+# Imagine you're building a basic security monitoring configuration tool.
 
-# # Your program should:
-# # 1. Ask the analyst to enter a username.
-# # 2. Ask whether monitoring should be enabled, requesting 1 for yes and 0 for no.
-# # 3. Store both inputs in variables.
-# # 4. Convert the monitoring input into an integer.
-# # 5. Convert that integer into a Boolean using bool().
-# # 6. Print the username, monitoring status, and their data types.
-# # Example:
-# # Enter username: adminRoot
-# # Enable monitoring? Enter 1 for yes or 0 for no: 1
-
-# # ===== MONITORING CONFIGURATION =====
-# # Username: adminRoot
-# # Monitoring Enabled: True
-# # Username Type: <class 'str'>
-# # Monitoring Type: <class 'bool'>
-
-# # Reasoning question: Why is converting "1" directly to a Boolean different from converting 1 to a Boolean?
+# Your program should:
+# 1. Ask the analyst to enter a username.
+# 2. Ask whether monitoring should be enabled, requesting 1 for yes and 0 for no.
+# 3. Store both inputs in variables.
+# 4. Convert the monitoring input into an integer.
+# 5. Convert that integer into a Boolean.
+# 6. Print the username, monitoring status, and their data types.
+# Example:
+# Enter username: adminRoot
+# Enable monitoring? Enter 1 for yes or 0 for no: 1
 
 
+# Reasoning question: Why is converting "1" directly to a Boolean different from converting 1 to a Boolean?
 
-# # Exercise 13 — Mathematical security calculations
-# # A security analyst is calculating a simple risk score.
+# ANSWER
+# 1. Ask the analyst to enter a username.
+userName = input("Enter a username: ")
 
-# # Given:
-# failedLogins = 17
-# successfulLogins = 5
-# riskMultiplier = 2.75
+# 2. Ask whether monitoring should be enabled, requesting 1 for yes and 0 for no.
+enableMonitoring = input("Enable monitoring? Enter 1 for yes or 0 for no: ")
 
-# # Your tasks:
-# # 1. Calculate the difference between failed and successful logins.
-# # 2. Use abs() to obtain the absolute difference.
-# # 3. Multiply the absolute difference by riskMultiplier.
-# # 4. Round the resulting risk score to 2 decimal places.
-# # 5. Use math.ceil() to round the risk score upward.
-# # 6. Use math.floor() to round the risk score downward.
-# # 7. Print all results using f-strings.
-# # 8. Use type() to inspect the calculated values.
+# 4. Convert the monitoring input into an integer.
+enableMonitoring = int(enableMonitoring)
 
-# # Bonus: What happens to the final score if riskMultiplier is changed to 3.5?
+# 5. Convert that integer into a Boolean.
+enableMonitoring = bool(enableMonitoring)
+
+# 6. Print the username, monitoring status, and their data types.
+print(f"""
+ ===== MONITORING CONFIGURATION =====
+Username: {userName}
+Monitoring Enabled: {enableMonitoring}
+Username Type: {type(userName)}
+Monitoring Type: {type(enableMonitoring)}
+""")
 
 
-
-# # Exercise 14 — Predict before execution
-# # Study the following code carefully.
-
-# # Before running it, predict the output and data type of every expression.
-# # import math
-# value1 = 12.75
-# value2 = -8
-# value3 = "25"
-# value4 = ""
-# value5 = 0
-# value6 = None
-# print(round(value1))
-# print(round(value1, 1))
-# print(abs(value2))
-# print(int(value3))
-# print(float(value3))
-# print(bool(value4))
-# print(bool(value5))
-# print(bool(value6))
-# print(math.ceil(4.2))
-# print(math.floor(4.9))
-# print(math.isqrt(36))
-# print(math.exp(1))
-
-# # Your tasks:
-# # 1. Predict every output.
-# # 2. Identify the data type returned by each function.
-# # 3. Execute the code and compare your predictions.
-# # 4. Explain any differences between your predictions and the actual results.
-# # Important: math.exp(1) produces a floating-point approximation of Euler's number, approximately 2.71828.
+# Reasoning question: Why is converting "1" directly to a Boolean different from converting 1 to a Boolean?
+#Because "1" is a string and 1 is an integer
 
 
 
-# # Exercise 14 — Mini SOC analyst command-line tool
+
+# Exercise 13 — Mathematical security calculations
+# A security analyst is calculating a simple risk score.
+
+# Given:
+failedLogins = 17
+successfulLogins = 5
+riskMultiplier = 2.75
+
+# Your tasks:
+# 1. Calculate the difference between failed and successful logins.
+# 2. Use abs() to obtain the absolute difference.
+# 3. Multiply the absolute difference by riskMultiplier.
+# 4. Round the resulting risk score to 2 decimal places.
+# 5. Use math.ceil() to round the risk score upward.
+# 6. Use math.floor() to round the risk score downward.
+# 7. Print all results using f-strings.
+
+
+# ANSWER
+# 1. Calculate the difference between failed and successful logins.
+difference = failedLogins -successfulLogins
+
+# 2. Use abs() to obtain the absolute difference.
+absoluteDifference = abs(difference)
+
+# 3. Multiply the absolute difference by riskMultiplier.
+riskScore = absoluteDifference * riskMultiplier
+
+# 4. Round the resulting risk score to 2 decimal places.
+roundedRiskScore = round(riskScore, 2)
+
+# 5. Use math.ceil() to round the risk score upward.
+import math
+riskScoreUpward = math.ceil(riskScore)
+
+# 6. Use math.floor() to round the risk score downward.
+riskScoreDownward = math.floor(riskScore)
+
+# 7. Print all results using f-strings.
+print(f"""
+==== Security Calculations Result ====
+Difference: {difference}
+Absolute Difference: {absoluteDifference}
+Risk Score: {riskScore}
+Rounded Risk Score: {roundedRiskScore}
+Risk Score Rounded Up: {riskScoreUpward}
+Risk Score Rounded Down: {riskScoreDownward}
+""")
+
+
+
+# Exercise 14 — Predict before execution
+# Study the following code carefully.
+
+# Before running it, predict the output and data type of every expression.
+import math
+
+value1 = 12.75
+value2 = -8
+value3 = "25"
+value4 = ""
+value5 = 0
+value6 = None
+
+print(round(value1))
+# Datatype: int
+# Value: 13
+
+print(round(value1, 1))
+# Datatype: float
+# Value: 12.8
+
+print(abs(value2))
+# Datatype: int
+# Value: 8
+
+print(int(value3))
+# Datatype: int
+# Value: 25
+
+print(float(value3))
+# Datatype: float
+# Value: 25.0
+
+print(bool(value4))
+# Datatype: bool
+# Value: false
+
+print(bool(value5))
+# Datatype: bool
+# Value: false
+
+print(bool(value6))
+# Datatype: bool
+# Value: false
+
+print(math.ceil(4.2))
+# Datatype: int
+# Value: 5
+
+print(math.floor(4.9))
+# Datatype: int
+# Value:4
+
+print(math.isqrt(36))
+# Datatype: int
+# Value: 6
+
+print(math.exp(1))
+# Datatype: float
+# Value: 2.7
+
+# Your tasks:
+# 1. Predict every output.
+# 2. Identify the data type returned by each function.
+# 3. Execute the code and compare your predictions.
+# 4. Explain any differences between your predictions and the actual results.
+# Important: math.exp(1) produces a floating-point approximation of Euler's number, approximately 2.71828.
+
+
+
+# # Exercise 15 — Mini SOC analyst command-line tool
 # # This exercise combines everything you've studied.
 
 # # Imagine you're developing a basic command-line tool that collects incident information and calculates a simple risk score.
