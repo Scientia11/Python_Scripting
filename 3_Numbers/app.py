@@ -812,68 +812,101 @@ print(math.exp(1))
 
 
 
-# # Exercise 15 — Mini SOC analyst command-line tool
-# # This exercise combines everything you've studied.
+# Exercise 15 — Mini SOC analyst command-line tool
+# This exercise combines everything you've studied.
 
-# # Imagine you're developing a basic command-line tool that collects incident information and calculates a simple risk score.
+# Imagine you're developing a basic command-line tool that collects incident information and calculates a simple risk score.
 
-# # Your program should:
+# Your program should:
 
+# Part A: Collect information
+# Use input() to request:
+# - Analyst name
+# - Username under investigation
+# - Number of failed login attempts
+# - Number of successful login attempts
+# - Risk multiplier
+
+
+# Part B: Convert the data
+# Convert:
+# - Failed login attempts into an integer.
+# - Successful login attempts into an integer.
+# - Risk multiplier into a float.
+# Use type() to verify the converted values.
+
+# Part C: Perform calculations
+# 1. Calculate the total login attempts.
+# 2. Calculate the difference between failed and successful logins.
+# 3. Calculate the absolute difference using abs().
+# 4. Multiply the absolute difference by the risk multiplier.
+# 5. Round the risk score to 2 decimal places.
+# 6. Use math.ceil() to obtain the rounded-up risk score.
+# 7. Use math.floor() to obtain the rounded-down risk score.
+# Part D: Boolean checks
+
+# Create a Boolean variable indicating whether the username is empty.
+
+# Create another Boolean variable indicating whether failed login attempts are greater than zero, using the values you've collected.
+
+# Part E: Generate the report
+
+# Print a neatly formatted report using an f-string.
+
+# Your report should follow this structure:
+# ========== SOC INCIDENT REPORT ==========
+# Analyst: [analyst name]
+# Username: [username]
+
+# Failed Logins: [value]
+# Successful Logins: [value]
+# Total Attempts: [value]
+
+# Absolute Difference: [value]
+# Risk Score: [value]
+# Rounded Up Score: [value]
+# Rounded Down Score: [value]
+
+# Username Is Empty: [True/False]
+# Failed Login Activity: [True/False]
+# =========================================
+
+
+# Bonus questions:
+# 1. What happens if an analyst enters "ten" instead of 10 for failed login attempts?
+# 2. Why must you convert the input before performing arithmetic?
+# 3. What would happen if the analyst entered an empty username?
+# 4. Why might math.ceil() be useful when rounding a risk score to a whole number?
+
+
+# ANSWER
 # # Part A: Collect information
-
 # # Use input() to request:
 # # - Analyst name
 # # - Username under investigation
 # # - Number of failed login attempts
 # # - Number of successful login attempts
 # # - Risk multiplier
-# # Part B: Convert the data
 
+analystName = input("Enter Analyst Name: ")
+userName = input("Enter User Name: ")
+failedLoginAttempts = input("Enter Number Of Failed Login Attempts: ")
+succesfulLoginAttempts = input("Enter Number Of Successful Login Attempts: ")
+riskMultiplier = input("Enetr Risk Multiplier: ")
+
+
+# # Part B: Convert the data
 # # Convert:
 # # - Failed login attempts into an integer.
 # # - Successful login attempts into an integer.
 # # - Risk multiplier into a float.
 # # Use type() to verify the converted values.
 
-# # Part C: Perform calculations
-# # 1. Calculate the total login attempts.
-# # 2. Calculate the difference between failed and successful logins.
-# # 3. Calculate the absolute difference using abs().
-# # 4. Multiply the absolute difference by the risk multiplier.
-# # 5. Round the risk score to 2 decimal places.
-# # 6. Use math.ceil() to obtain the rounded-up risk score.
-# # 7. Use math.floor() to obtain the rounded-down risk score.
-# # Part D: Boolean checks
+failedLoginAttempts = int(failedLoginAttempts)
+print(type(failedLoginAttempts))
 
-# # Create a Boolean variable indicating whether the username is empty.
+succesfulLoginAttempts = int(succesfulLoginAttempts)
+print(type(succesfulLoginAttempts))
 
-# # Create another Boolean variable indicating whether failed login attempts are greater than zero, using the values you've collected.
-
-# # Part E: Generate the report
-
-# # Print a neatly formatted report using an f-string.
-
-# # Your report should follow this structure:
-# # ========== SOC INCIDENT REPORT ==========
-# # Analyst: [analyst name]
-# # Username: [username]
-
-# # Failed Logins: [value]
-# # Successful Logins: [value]
-# # Total Attempts: [value]
-
-# # Absolute Difference: [value]
-# # Risk Score: [value]
-# # Rounded Up Score: [value]
-# # Rounded Down Score: [value]
-
-# # Username Is Empty: [True/False]
-# # Failed Login Activity: [True/False]
-# # =========================================
-
-
-# # Bonus questions:
-# # 1. What happens if an analyst enters "ten" instead of 10 for failed login attempts?
-# # 2. Why must you convert the input before performing arithmetic?
-# # 3. What would happen if the analyst entered an empty username?
-# # 4. Why might math.ceil() be useful when rounding a risk score to a whole number?
+riskMultiplier = float(riskMultiplier)
+print(type(riskMultiplier))
