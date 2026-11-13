@@ -11,8 +11,6 @@ print(ord('h'))
 print(ord('H'))
 
 
-
-
 # CONDITIONAL STATEMENTS
 temperature = 15
 
@@ -26,3 +24,24 @@ else:
 
 
 print("We good!")
+
+
+
+
+# Check student eligibility
+age = 16
+
+if age >= 18:
+    message = "Eligible"
+else:
+    message = "Not Eligible"
+
+
+print(message)
+
+
+# TERNARY OPERATOR
+message = "Eligible" if age >= 18 else "Not eligible"
+print(message)
+
+
