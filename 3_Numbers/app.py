@@ -843,8 +843,9 @@ print(math.exp(1))
 # 5. Round the risk score to 2 decimal places.
 # 6. Use math.ceil() to obtain the rounded-up risk score.
 # 7. Use math.floor() to obtain the rounded-down risk score.
-# Part D: Boolean checks
 
+
+# Part D: Boolean checks
 # Create a Boolean variable indicating whether the username is empty.
 
 # Create another Boolean variable indicating whether failed login attempts are greater than zero, using the values you've collected.
@@ -852,24 +853,6 @@ print(math.exp(1))
 # Part E: Generate the report
 
 # Print a neatly formatted report using an f-string.
-
-# Your report should follow this structure:
-# ========== SOC INCIDENT REPORT ==========
-# Analyst: [analyst name]
-# Username: [username]
-
-# Failed Logins: [value]
-# Successful Logins: [value]
-# Total Attempts: [value]
-
-# Absolute Difference: [value]
-# Risk Score: [value]
-# Rounded Up Score: [value]
-# Rounded Down Score: [value]
-
-# Username Is Empty: [True/False]
-# Failed Login Activity: [True/False]
-# =========================================
 
 
 # Bonus questions:
@@ -903,10 +886,65 @@ riskMultiplier = input("Enetr Risk Multiplier: ")
 # # Use type() to verify the converted values.
 
 failedLoginAttempts = int(failedLoginAttempts)
-print(type(failedLoginAttempts))
+# print(type(failedLoginAttempts))
 
 succesfulLoginAttempts = int(succesfulLoginAttempts)
-print(type(succesfulLoginAttempts))
+# print(type(succesfulLoginAttempts))
 
 riskMultiplier = float(riskMultiplier)
-print(type(riskMultiplier))
+# print(type(riskMultiplier))
+
+
+# Part C: Perform calculations
+# 1. Calculate the total login attempts.
+# 2. Calculate the difference between failed and successful logins.
+# 3. Calculate the absolute difference using abs().
+# 4. Multiply the absolute difference by the risk multiplier.
+# 5. Round the risk score to 2 decimal places.
+# 6. Use math.ceil() to obtain the rounded-up risk score.
+# 7. Use math.floor() to obtain the rounded-down risk score.
+
+totalLoginAttemts = failedLoginAttempts + succesfulLoginAttempts
+
+loginDifference = failedLoginAttempts - succesfulLoginAttempts
+
+absoluteDifference = abs(loginDifference)
+
+riskScore = round((absoluteDifference * riskMultiplier), 2)
+
+import math
+roundUpRiskScore = math.ceil(riskScore)
+
+roundDownRiskScore = math.floor(riskScore)
+
+
+# Part D: Boolean checks
+# Create a Boolean variable indicating whether the username is empty.
+emptyUsername = not bool(userName)
+
+# Create another Boolean variable indicating whether failed login attempts are greater than zero, using the values you've collected.
+failedAttemptExist = failedLoginAttempts > 0
+
+
+# Part E: Generate the report
+# Print a neatly formatted report using an f-string.
+incidentReport = f"""
+========== SOC INCIDENT REPORT ==========
+Analyst: {analystName}
+Username: {userName}
+
+Failed Logins: {failedLoginAttempts}
+Successful Logins: {succesfulLoginAttempts}
+Total Attempts: {totalLoginAttemts}
+
+Absolute Difference: {absoluteDifference}
+Risk Score: {riskScore}
+Rounded Up Score: {roundUpRiskScore}
+Rounded Down Score: {roundDownRiskScore}
+
+Username Is Empty: {emptyUsername}
+Failed Login Activity: {failedAttemptExist}
+=========================================
+"""
+
+print(incidentReport)
