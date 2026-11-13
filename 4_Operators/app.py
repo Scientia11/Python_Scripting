@@ -45,3 +45,25 @@ message = "Eligible" if age >= 18 else "Not eligible"
 print(message)
 
 
+
+# LOGICAL OPERATORS
+# and
+# or
+# not
+
+# LOAN ELIGIBILITY DETECTOR
+highIncome = True
+goodCredit = True
+student = False
+
+if (highIncome and goodCredit) and not student:
+    print("Eligible for loan")
+else:
+    print("Not eligiblre for loan")
+
+
+
+# implementing the same logic with the ternary operator
+eligibility = "Eligible for loan" if ((highIncome and goodCredit) and not student) else "Not eligible for loan"
+print(eligibility)
+
