@@ -222,31 +222,63 @@ print("Attempts Status: ", failedLoginAttemptsStatus)
 
 
 
-
-
 # Exercise 4 — Evaluate multiple security conditions
-# Intermediate
-#  and, or, not
-
 # A security system determines whether an account should be flagged for investigation.
 
 # Given:
-# failedLogins = 7accountLocked = FalsesuspiciousIP = TrueknownDevice = False
-
-
+failedLogins = 7
+accountLocked = True
+suspiciousIP = False
+knownDevice = False
 
 # Your tasks:
 # 1. Check whether the account has more than 5 failed login attempts and is locked.
 # 2. Check whether the IP address is suspicious or the account is locked.
 # 3. Use not to check whether the device is not recognized (knownDevice is false).
 # 4. Check whether the account should be investigated when the IP is suspicious and the device is not recognized.
-# 5. Print all results using f-strings.
+
 # Bonus: Change accountLocked to True and suspiciousIP to False. Observe how the results change.
 
 # Reasoning questions:
 # - When does and return True?
 # - When does or return True?
 # - What does not do to a Boolean value?
+
+# ANSWER
+# 1. Check whether the account has more than 5 failed login attempts and is locked.
+print((failedLogins > 5) and accountLocked)
+
+# 2. Check whether the IP address is suspicious or the account is locked.
+print(suspiciousIP or accountLocked)
+
+
+# 3. Use not to check whether the device is not recognized.
+unKnownDevice  = not knownDevice
+print(unKnownDevice)
+
+# 4. Check whether the account should be investigated when the IP is suspicious and the device is not recognized.
+if suspiciousIP and (not knownDevice):
+    print("Account should be investigated")
+else:
+    print("No investigation needed, we good!")
+
+
+# Reasoning questions:
+# - When does and return True?
+# When both conditions are true
+
+# - When does or return True?
+# when atleast one condition is true
+
+# - What does not do to a Boolean value?
+# It inverts it
+
+
+
+
+
+
+
 # Exercise 5 — Mini SOC access-control system
 # Challenge
 #  All today's concepts
