@@ -68,6 +68,24 @@ eligibility = "Eligible for loan" if ((highIncome and goodCredit) and not studen
 print(eligibility)
 
 
+# SHORT CIRCUIT EVALUATION
+# Logical opeartors in python are short circuited. For instance with the "or" operator, 
+# the moment python encounters a true condition, the evaluation stops and true is returned.
+
+
+
+# CHAINING COMPARISON OPERATORS
+# age etween 18 and 65
+age = 18
+
+if 18 <= age < 65:
+    print("Eligible to vote!")
+else:
+    print("Not eligible to vote!")
+
+
+
+
 
 # Exercise 1 — Compare security metrics
 # A monitoring system records the following information:
@@ -277,16 +295,15 @@ else:
 
 
 
-
-
 # Exercise 5 — Mini SOC access-control system
-# Challenge
-#  All today's concepts
-
 # You are building a basic access-control decision system for a security operations environment.
 
 # Given:
-# userName = "analyst01"accountActive = TruepasswordCorrect = TruefailedLogins = 2isAdmin = False
+userName = "analyst01"
+accountActive = True
+passwordCorrect = True
+failedLogins = 4
+isAdmin = False
 
 
 
@@ -308,17 +325,22 @@ else:
 
 # Access Denied
 
+
 # Part B — Role classification
 
 # Use if, elif, and else:
 # - If isAdmin is True, print "Administrator Access".
 # - Otherwise, print "Standard Analyst Access".
+
+
 # Part C — Security warning
 
 # Use a conditional statement to check failed login attempts:
 # - 0–2: "Normal Activity"
 # - 3–4: "Warning: Login attempts approaching threshold"
 # - 5 or more: "Account Lockout Recommended"
+
+
 # Part D — Ternary operator
 
 # Create a variable called accessStatus using the ternary operator.
@@ -326,6 +348,9 @@ else:
 # It should store:
 # - "Granted" if access is allowed.
 # - "Denied" otherwise.
+
+
+
 # Part E — Generate a report
 
 # Use an f-string to print:
@@ -338,6 +363,61 @@ else:
 # User Role: Standard Analyst Access
 # Security Assessment: Normal Activity
 # =================================
+
+
+# Bonus challenges:
+# 1. What happens if accountActive is False?
+# 2. What happens if failedLogins is exactly 5?
+# 3. Can the ternary operator replace a simple if/else statement? Explain.
+# 4. Why is it important to check multiple conditions before granting access?
+
+
+# ANSWER
+# Part A — Access decision
+if accountActive and passwordCorrect and (failedLogins < 5):
+    print("Access Granted")
+else: 
+    print("Acess Denied")
+
+
+# Part B — Role classification
+userRole = ""
+
+if isAdmin:
+    userRole = "Administrator Access"
+else:
+    userRole = "Standard Analyst Access"
+
+
+# Part C — Security warning
+securityAcessment = ""
+
+if (failedLogins < 3):
+    securityAcessment = "Normal Activity"
+elif (failedLogins < 5):
+   securityAcessment = "Warning: Login attempts approaching threshold"
+else:
+   securityAcessment = "Account Lockout Recommended"
+
+
+# Part D — Ternary operator
+accessStatus = "Granted" if (accountActive and passwordCorrect and (failedLogins < 5)) else "Denied"
+
+
+# Part E — Generate a report
+accessReport = f"""
+===== ACCESS CONTROL REPORT =====
+Username: {userName}
+Account Active: {accountActive}
+Password Correct: {passwordCorrect}
+Failed Logins: {failedLogins}
+Access Status: {accessStatus}
+User Role: {userRole}
+Security Assessment: {securityAcessment}
+=================================
+"""
+
+print(accessReport)
 
 
 # Bonus challenges:
