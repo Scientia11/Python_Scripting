@@ -302,7 +302,7 @@ else:
 userName = "analyst01"
 accountActive = True
 passwordCorrect = True
-failedLogins = 4
+failedLogins = 5
 isAdmin = False
 
 
@@ -422,6 +422,13 @@ print(accessReport)
 
 # Bonus challenges:
 # 1. What happens if accountActive is False?
+# Acess Denied
+
 # 2. What happens if failedLogins is exactly 5?
+# Acess Denied
+
 # 3. Can the ternary operator replace a simple if/else statement? Explain.
+# Yes, the ternary operator can replace a simple if/else statement. It allows for a more concise way to assign a value based on a condition, making the code cleaner and easier to read. However, it is best used for simple conditions; for more complex logic, traditional if/else statements may be clearer.
+
 # 4. Why is it important to check multiple conditions before granting access?
+# It is important to check multiple conditions before granting access to ensure that the user meets all necessary security requirements. This helps prevent unauthorized access, protects sensitive information, and maintains the integrity of the system.
