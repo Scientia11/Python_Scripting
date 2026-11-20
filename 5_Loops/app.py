@@ -40,6 +40,24 @@ for x in range(5):
 
 
 
+# ITERABLES
+# range()
+for number in range(3):
+    print(number)
+
+
+# strings
+for letter in "Python":
+    print(letter)
+
+
+# list
+marks = [58, 89, 75, 75]
+
+for mark in marks:
+    print(mark)
+
+
 
 
 # Exercise 1: Basic for loop
@@ -132,10 +150,9 @@ else:
 
 
 
-
 # Exercise 5: Mini SOC investigation challenge
 # You are investigating a list of login attempts:
-loginAttempts = ["SUCCESS", "FAILED", "FAILED", "SUCCESS", "FAILED"]
+loginAttempts = ["SUCCESS", "FAILED", "FAILED", "SUCCESS", "FAILED", "SUSPICIOUS"]
 
 # Tasks:
 # 1. Create two variables:
@@ -146,4 +163,28 @@ loginAttempts = ["SUCCESS", "FAILED", "FAILED", "SUCCESS", "FAILED"]
 # 4. If an attempt is "FAILED", increase failedLogins by 1.
 # 5. Use for...else to print "Investigation completed." after all attempts have been processed.
 # 6. Print the total successful and failed login attempts.
+
 # Bonus: Modify the investigation so that it searches for "SUSPICIOUS" in the list. If found, print "Suspicious activity detected!"; otherwise, use the loop's else block to print "No suspicious activity detected."
+
+
+# ANSWER
+successfulLogins = 0
+failedLogins = 0
+suspiciousActivity = "No suspicious activity detected."
+
+
+for attempt in loginAttempts:
+    if attempt == "SUCCESS":
+        successfulLogins += 1
+    elif attempt == "SUSPICIOUS":
+        suspiciousActivity = "Suspicious activity detected!"
+    else:
+        failedLogins += 1
+else:
+    print(f"""
+Investigation Completed.
+Successful Logins: {successfulLogins}
+Failed Logins: {failedLogins}
+Suspicous Activity: {suspiciousActivity}
+""")
+
