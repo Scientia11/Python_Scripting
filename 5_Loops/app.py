@@ -188,3 +188,109 @@ Failed Logins: {failedLogins}
 Suspicous Activity: {suspiciousActivity}
 """)
 
+
+
+# Exercise 6 — Network Port Enumeration
+# A SOC analyst is investigating a host for potentially exposed network ports.
+targetPorts = [21, 22, 23, 25, 53, 80, 110, 443, 445, 3389]
+
+# Tasks:
+# 1. Use a for loop to examine every port.
+# 2. Print ports that are commonly associated with remote access or file-sharing risks: 21, 22, 23, 445, and 3389.
+# 3. Use range() to generate numbers from 1 to 10 and print their squares.
+# 4. Modify the first task so that each port is printed with its position in the list, starting from 1.
+# Challenge: Explain the difference between range(1, 10) and range(1, 11).
+
+# ANSWER
+print("Exposed Remote Acess or File Sharing Ports")
+for port in range(0, 10):
+    if targetPorts[port] == 21 or targetPorts[port] == 22 or targetPorts[port] == 23 or targetPorts[port] == 445 or targetPorts[port] == 3389:
+        print(f"port: {targetPorts[port]}, positon: {port + 1}")
+
+
+print("")
+
+print("Square of numbers from 1-10")
+for number in range(1, 11):
+    print(number * number)
+
+# Challenge: Explain the difference between range(1, 10) and range(1, 11).
+# range(1, 10) starts from 1 and end at 9
+# range(1, 11) starts from 1 and end at 
+
+
+
+# Exercise 2 — Password Character Analysis
+# Intermediate
+# You are analysing a suspicious password recovered during a security investigation.
+# password = "Admin@2026Secure"
+
+
+
+# Tasks:
+# 1. Use a for loop to examine every character in the password.
+# 2. Count how many characters are digits (0–9).
+# 3. Count how many characters are uppercase letters.
+# 4. Count how many characters are lowercase letters.
+# 5. Count how many characters are special characters (characters that are neither uppercase, lowercase nor digits).
+# 6. Print a summary of your findings.
+# Hint: You can use string methods such as .isdigit(), .isupper(), and .islower().
+
+# Challenge: Use string slicing to extract the first five and last six characters of the password.
+# Exercise 3 — Nested Loops: Security Event Matrix
+# Intermediate–Advanced
+# A SOC analyst is monitoring three servers. Each server has recorded several failed login attempts.
+# serverLogs = [    [2, 5, 1, 7],    [8, 3, 6, 2],    [1, 4, 9, 5]]
+
+
+
+# Tasks:
+# 1. Use nested for loops to print every failed login count.
+# 2. Print the values in a structured format, identifying each server and its individual attempt count.
+# 3. Calculate the total failed login attempts across all servers.
+# 4. Count how many individual login counts are greater than or equal to 5.
+# 5. Identify which server recorded the highest individual failed login count.
+# Challenge: Use range() with the indexes of the outer and inner lists to produce output similar to:
+# Server 1: 2 5 1 7
+# Server 2: 8 3 6 2
+# Server 3: 1 4 9 5
+
+
+# Exercise 4 — Nested Loops: IP Address Investigation
+# Advanced
+# You have two lists containing IP addresses from different security logs.
+# internalIPs = [    "192.168.1.10",    "10.0.0.5",    "172.16.0.8",    "192.168.1.50"]suspiciousIPs = [    "10.0.0.5",    "8.8.8.8",    "192.168.1.50",    "45.33.32.156"]
+
+
+
+# Your task is to identify IP addresses that appear in both lists.
+
+# Tasks:
+# 1. Use nested for loops to compare every IP in internalIPs with every IP in suspiciousIPs.
+# 2. Print an IP address whenever a match is found.
+# 3. Count the total number of matching IP addresses.
+# 4. Print a message if no matching IP address is found.
+# Challenge: Explain why nested loops are useful for comparing two lists, and how many comparisons your code performs with these lists.
+# Exercise 5 — Mini SOC Log Analysis Engine
+# Advanced
+# This is your main challenge. You are building a basic log analysis engine that examines multiple security events.
+# securityLogs = [    "2026-11-21 ALERT FAILED_LOGIN FROM 192.168.1.10",    "2026-11-21 INFO USER_LOGIN FROM 10.0.0.5",    "2026-11-21 ALERT MALWARE_DETECTED FROM 172.16.0.8",    "2026-11-21 ALERT FAILED_LOGIN FROM 192.168.1.50",    "2026-11-21 INFO SYSTEM_UPDATE FROM 10.0.0.10",    "2026-11-21 ALERT UNAUTHORIZED_ACCESS FROM 45.33.32.156"]
+
+
+
+# Tasks:
+# 1. Use a for loop to examine each log entry.
+# 2. Count the total number of logs containing "ALERT".
+# 3. Count the number of logs containing "FAILED_LOGIN".
+# 4. Count the number of logs containing "MALWARE_DETECTED".
+# 5. Use string methods to convert each log entry to uppercase before analysing it.
+# 6. Use string slicing to extract the date from each log entry.
+# 7. Extract the IP address from each log entry using string slicing.
+# 8. Use a nested loop to compare the extracted IP addresses against this list:
+# blockedIPs = [    "192.168.1.50",    "45.33.32.156"]
+
+
+
+# 9. Print any log entry whose IP address appears in blockedIPs.
+# 10. Print a final investigation summary containing all your counts.
+# Bonus challenge: Use for...else to display "Log analysis completed successfully." after all log entries have been processed.
