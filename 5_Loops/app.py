@@ -58,6 +58,14 @@ for mark in marks:
     print(mark)
 
 
+# WHILE LOOPS
+command = ""
+
+while command.lower() != "quit":
+    command = input(">")
+    print("ECHOE", command)
+
+
 
 
 # Exercise 1: Basic for loop
@@ -220,12 +228,10 @@ for number in range(1, 11):
 
 
 
-# Exercise 2 — Password Character Analysis
-# Intermediate
+
+# Exercise 7 — Password Character Analysis
 # You are analysing a suspicious password recovered during a security investigation.
-# password = "Admin@2026Secure"
-
-
+password = "Admin@2026Secure"
 
 # Tasks:
 # 1. Use a for loop to examine every character in the password.
@@ -237,6 +243,49 @@ for number in range(1, 11):
 # Hint: You can use string methods such as .isdigit(), .isupper(), and .islower().
 
 # Challenge: Use string slicing to extract the first five and last six characters of the password.
+
+# ANSWER
+digitsCount = 0
+upperCaseCount = 0
+lowerCaseCount = 0
+specialCharCount = 0
+
+for char in password:
+    if char.isdigit():
+          digitsCount += 1
+    elif char.isupper():
+          upperCaseCount += 1
+    elif char.islower():
+          lowerCaseCount += 1
+    else:
+          specialCharCount += 1
+
+
+
+report = f"""
+==== PASSWORD CHARACTER ANALYSIS ====
+Digits: {digitsCount}
+Uppercase: {upperCaseCount}
+Lowercase: {lowerCaseCount}
+Special Characters: {specialCharCount}
+======================================
+"""
+print(report)
+
+
+print("")
+
+# Challenge: Use string slicing to extract the first five and last six characters of the password.
+print("First five characters: ", password[0:5])
+print("Last six characters: ",password[-6:len(password)])
+
+
+
+
+
+
+
+
 # Exercise 3 — Nested Loops: Security Event Matrix
 # Intermediate–Advanced
 # A SOC analyst is monitoring three servers. Each server has recorded several failed login attempts.
