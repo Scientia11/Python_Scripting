@@ -66,6 +66,19 @@ while command.lower() != "quit":
     print("ECHOE", command)
 
 
+Infinite Loops
+These are loops in which the test condition ia always true hence the loop run forever and should be avoided
+
+
+# Practice Exercise: Write a program to print even numbers between 1 and 10
+evenNumbersCount = 0
+
+for number in range(1, 10):
+    if number % 2 == 0:
+        print(number)
+        evenNumbersCount += 1
+else:
+    print(f"We have {evenNumbersCount} even numbers")
 
 
 # Exercise 1: Basic for loop
