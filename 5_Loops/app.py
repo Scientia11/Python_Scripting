@@ -66,8 +66,8 @@ while command.lower() != "quit":
     print("ECHOE", command)
 
 
-Infinite Loops
-These are loops in which the test condition ia always true hence the loop run forever and should be avoided
+# Infinite Loops
+# These are loops in which the test condition ia always true hence the loop run forever and should be avoided
 
 
 # Practice Exercise: Write a program to print even numbers between 1 and 10
@@ -295,16 +295,9 @@ print("Last six characters: ",password[-6:len(password)])
 
 
 
-
-
-
-
-# Exercise 3 — Nested Loops: Security Event Matrix
-# Intermediate–Advanced
+# Exercise 8 — Nested Loops: Security Event Matrix
 # A SOC analyst is monitoring three servers. Each server has recorded several failed login attempts.
-# serverLogs = [    [2, 5, 1, 7],    [8, 3, 6, 2],    [1, 4, 9, 5]]
-
-
+serverLogs = [ [2, 5, 1, 7], [8, 3, 6, 2], [1, 4, 9, 5]]
 
 # Tasks:
 # 1. Use nested for loops to print every failed login count.
@@ -312,13 +305,36 @@ print("Last six characters: ",password[-6:len(password)])
 # 3. Calculate the total failed login attempts across all servers.
 # 4. Count how many individual login counts are greater than or equal to 5.
 # 5. Identify which server recorded the highest individual failed login count.
-# Challenge: Use range() with the indexes of the outer and inner lists to produce output similar to:
-# Server 1: 2 5 1 7
-# Server 2: 8 3 6 2
-# Server 3: 1 4 9 5
+
+# ANSWER
+totalFailedAttempts = 0
+loginLimitCount = 0
+highestFaildCount = 0
+highestFaildCountServer = ""
+
+for serverLog in range(0, len(serverLogs)):
+    print(f"SERVER {serverLog + 1} LOGS")
+
+    for log in serverLogs[serverLog]:
+            if (log >= 5):
+                  loginLimitCount += 1
+
+            print(log)
+
+            totalFailedAttempts += log
+
+            if (highestFaildCount < log):
+                  highestFaildCountServer = f"Server {serverLog + 1}"
+else: 
+      print("Total failed attempts: ", totalFailedAttempts)
+      print("Login Limit Count: ", loginLimitCount)
+      print("Highest attempts count server: ", highestFaildCountServer)
+    
 
 
-# Exercise 4 — Nested Loops: IP Address Investigation
+
+
+# Exercise 9 — Nested Loops: IP Address Investigation
 # Advanced
 # You have two lists containing IP addresses from different security logs.
 # internalIPs = [    "192.168.1.10",    "10.0.0.5",    "172.16.0.8",    "192.168.1.50"]suspiciousIPs = [    "10.0.0.5",    "8.8.8.8",    "192.168.1.50",    "45.33.32.156"]
@@ -333,7 +349,9 @@ print("Last six characters: ",password[-6:len(password)])
 # 3. Count the total number of matching IP addresses.
 # 4. Print a message if no matching IP address is found.
 # Challenge: Explain why nested loops are useful for comparing two lists, and how many comparisons your code performs with these lists.
-# Exercise 5 — Mini SOC Log Analysis Engine
+
+
+# Exercise 10 — Mini SOC Log Analysis Engine
 # Advanced
 # This is your main challenge. You are building a basic log analysis engine that examines multiple security events.
 # securityLogs = [    "2026-11-21 ALERT FAILED_LOGIN FROM 192.168.1.10",    "2026-11-21 INFO USER_LOGIN FROM 10.0.0.5",    "2026-11-21 ALERT MALWARE_DETECTED FROM 172.16.0.8",    "2026-11-21 ALERT FAILED_LOGIN FROM 192.168.1.50",    "2026-11-21 INFO SYSTEM_UPDATE FROM 10.0.0.10",    "2026-11-21 ALERT UNAUTHORIZED_ACCESS FROM 45.33.32.156"]
