@@ -335,11 +335,9 @@ else:
 
 
 # Exercise 9 — Nested Loops: IP Address Investigation
-# Advanced
 # You have two lists containing IP addresses from different security logs.
-# internalIPs = [    "192.168.1.10",    "10.0.0.5",    "172.16.0.8",    "192.168.1.50"]suspiciousIPs = [    "10.0.0.5",    "8.8.8.8",    "192.168.1.50",    "45.33.32.156"]
-
-
+internalIPs = ["192.168.1.10", "10.0.0.5", "172.16.0.8", "192.168.1.50"]
+suspiciousIPs = ["10.0.0.5","8.8.8.8", "192.168.1.50", "45.33.32.156"]
 
 # Your task is to identify IP addresses that appear in both lists.
 
@@ -348,15 +346,26 @@ else:
 # 2. Print an IP address whenever a match is found.
 # 3. Count the total number of matching IP addresses.
 # 4. Print a message if no matching IP address is found.
-# Challenge: Explain why nested loops are useful for comparing two lists, and how many comparisons your code performs with these lists.
+
+totalMatchingIPs = 0
+
+for internalIP in internalIPs:
+    for suspiciousIP in suspiciousIPs:
+        if (internalIP == suspiciousIP):
+            print("Matching Suspicious IP: ", suspiciousIP)
+            totalMatchingIPs += 1
+else: 
+    if totalMatchingIPs == 0:
+        print("No matching IPs found")
+
+
+
+
 
 
 # Exercise 10 — Mini SOC Log Analysis Engine
-# Advanced
 # This is your main challenge. You are building a basic log analysis engine that examines multiple security events.
-# securityLogs = [    "2026-11-21 ALERT FAILED_LOGIN FROM 192.168.1.10",    "2026-11-21 INFO USER_LOGIN FROM 10.0.0.5",    "2026-11-21 ALERT MALWARE_DETECTED FROM 172.16.0.8",    "2026-11-21 ALERT FAILED_LOGIN FROM 192.168.1.50",    "2026-11-21 INFO SYSTEM_UPDATE FROM 10.0.0.10",    "2026-11-21 ALERT UNAUTHORIZED_ACCESS FROM 45.33.32.156"]
-
-
+securityLogs = ["2026-11-21 ALERT FAILED_LOGIN FROM 192.168.1.10", "2026-11-21 INFO USER_LOGIN FROM 10.0.0.5", "2026-11-21 ALERT MALWARE_DETECTED FROM 172.16.0.8", "2026-11-21 ALERT FAILED_LOGIN FROM 192.168.1.50", "2026-11-21 INFO SYSTEM_UPDATE FROM 10.0.0.10", "2026-11-21 ALERT UNAUTHORIZED_ACCESS FROM 45.33.32.156"]
 
 # Tasks:
 # 1. Use a for loop to examine each log entry.
@@ -368,9 +377,36 @@ else:
 # 7. Extract the IP address from each log entry using string slicing.
 # 8. Use a nested loop to compare the extracted IP addresses against this list:
 # blockedIPs = [    "192.168.1.50",    "45.33.32.156"]
-
-
-
 # 9. Print any log entry whose IP address appears in blockedIPs.
 # 10. Print a final investigation summary containing all your counts.
 # Bonus challenge: Use for...else to display "Log analysis completed successfully." after all log entries have been processed.
+
+totalAlertLogs = 0
+totalFailedLogin = 0
+totalMalwareDetected = 0
+extractedDates = []
+extractedIPs = []
+
+
+for log in securityLogs:
+    log = log.upper()
+
+    if ("ALERT" in log):
+        totalAlertLogs += 1
+
+    if ("FAILED_LOGIN" in log):
+        totalFailedLogin += 1
+
+    if ("MALWARE_DETECTED" in log):
+        totalMalwareDetected += 1
+
+
+
+
+print("Total ALERT Logs: ", totalAlertLogs)
+print("Total FAILED_LOGIN Logs: ", totalFailedLogin)
+print("Total MALWARE_DETECTED Logs: ", totalMalwareDetected)
+
+
+
+
